@@ -17,6 +17,8 @@ model User {
   updatedAt     DateTime
   sessions      Session[]
   accounts      Account[]
+  tasks         Task[]
+  clients       Client[]
 
   @@map("user")
 }
@@ -64,4 +66,33 @@ model Verification {
   updatedAt  DateTime?
 
   @@map("verification")
+}
+
+model Client {
+  id        String   @id @default(uuid()) // Identifiant unique pour le client
+  name      String // Nom du client (ex. : "Agence XYZ")
+  email     String? // Email du client (optionnel, pour la facturation par exemple)
+  userId    String // Lier le client à un utilisateur
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tasks     Task[] // Relation : un client peut être associé à plusieurs tâches
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("client")
+}
+
+model Task {
+  id        String   @id @default(uuid()) // Identifiant unique pour la tâche
+  title     String // Nom de la tâche (ex. : "Rédaction article blog")
+  deadline  DateTime // Date limite de la tâche
+  clientId  String? // Lier la tâche à un client (optionnel)
+  client    Client?  @relation(fields: [clientId], references: [id], onDelete: SetNull) // Relation avec Client
+  userId    String // Lier la tâche à un utilisateur
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade) // Relation avec User
+  status    String   @default("pending") // Statut de la tâche (ex. : "pending", "in_progress", "completed")
+  order     Int      @default(0) // Champ pour gérer la priorité (drag-and-drop)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("task")
 }
