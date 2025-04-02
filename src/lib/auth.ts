@@ -1,12 +1,24 @@
+import { PrismaClient } from '@prisma/client';
 import { betterAuth } from 'better-auth';
+import { prismaAdapter } from 'better-auth/adapters/prisma';
+
+export interface User {
+  id: string;
+  name: string;
+  email: string;
+  image: string;
+}
+
+export interface Session {
+  user: User | null;
+}
+
+const prisma = new PrismaClient();
 
 export const auth = betterAuth({
-  emailAndPassword: {
-    enabled: true,
-    async sendResetPassword(data, request) {
-      // Send an email to the user with a link to reset their password
-    },
-  },
+  database: prismaAdapter(prisma, {
+    provider: 'postgresql',
+  }),
   socialProviders: {
     google: {
       clientId: process.env.GOOGLE_CLIENT_ID!,
@@ -16,16 +28,12 @@ export const auth = betterAuth({
       clientId: process.env.GITHUB_CLIENT_ID!,
       clientSecret: process.env.GITHUB_CLIENT_SECRET!,
     },
-    gitlab: {
-      clientId: process.env.GITLAB_CLIENT_ID!,
-      clientSecret: process.env.GITLAB_CLIENT_SECRET!,
-    },
-    linkedin: {
-      clientId: process.env.LINKEDIN_CLIENT_ID!,
-      clientSecret: process.env.LINKEDIN_CLIENT_SECRET!,
-    },
   },
 
   /** if no database is provided, the user data will be stored in memory.
    * Make sure to provide a database to persist user data **/
-});
+}) as {
+  api: {
+    getSession: (options: { headers: Headers }) => Promise<Session>;
+  };
+};
