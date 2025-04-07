@@ -1,3 +1,4 @@
+import { auth } from '@/auth/auth';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import {
@@ -8,26 +9,31 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover';
 import LogOut from '@/features/header/LogOut';
-import { auth } from '@/lib/auth';
+import SignIn from '@/features/header/SignIn';
 import { headers } from 'next/headers';
-import Link from 'next/link';
 
 const Header = async () => {
   const session = await auth.api.getSession({
     headers: await headers(),
   });
 
-  const { image, name } = session?.user ?? { image: '', name: '' };
+  const { user } = session || {};
+  const { image, name } = user || {};
 
   return (
     <div className="flex justify-between gap-4 bg-gray-300 px-8 py-2">
       <p>Freelance-Flow</p>
-      {session?.user ? (
+      {user ? (
         <DropdownMenu>
           <DropdownMenuTrigger>
             <Avatar>
-              <AvatarImage src={image} />
+              <AvatarImage src={image || undefined} alt={name} />
               <AvatarFallback>{name?.[0] ?? '?'}</AvatarFallback>
             </Avatar>
           </DropdownMenuTrigger>
@@ -41,9 +47,14 @@ const Header = async () => {
           </DropdownMenuContent>
         </DropdownMenu>
       ) : (
-        <Link href="/compte">
-          <Button>compte</Button>
-        </Link>
+        <Popover>
+          <PopoverTrigger asChild>
+            <Button>compte</Button>
+          </PopoverTrigger>
+          <PopoverContent>
+            <SignIn />
+          </PopoverContent>
+        </Popover>
       )}
     </div>
   );

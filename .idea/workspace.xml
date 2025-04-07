@@ -4,8 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea5879e9-efea-4c1a-95b0-8b4909140a22" name="Changes" comment="[feat] login-logout">
+    <list default="true" id="ea5879e9-efea-4c1a-95b0-8b4909140a22" name="Changes" comment="[feat] create new task">
+      <change afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prisma/migrations/20250407074744_init/migration.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/actions/createTask/action.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/actions/deleteUser/action.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/auth/auth-client.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/auth/auth.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ui/popover.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ui/select.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/addTask/AddClient.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/addTask/AddTask.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/addTask/SelectClient.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/header/DeleteUser.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/header/SignIn.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/selectClient/SelectClient.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock 2.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/migrations/20250327193347_freelance_flow_initt/migration.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/migrations/20250331133808_init/migration.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/migrations/20250401172719_/migration.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/migrations/20250402105405_add_client_and_task/migration.sql" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/auth/[...all]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/auth/[...all]/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/compte/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/compte/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/header/LogOut.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/header/LogOut.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/signIn/SignIn.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/auth-client.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/auth.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,18 +50,21 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "CyrilleBurtin"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;CyrilleBurtin&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:CyrilleBurtin/freelance-flow.git",
-    "accountId": "bd032acf-cd50-4085-921c-547074cd47ab"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:CyrilleBurtin/freelance-flow.git&quot;,
+    &quot;accountId&quot;: &quot;bd032acf-cd50-4085-921c-547074cd47ab&quot;
   }
-}]]></component>
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -41,37 +74,56 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/cyrille/Desktop/freelanceFlow/freelance-flow&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/cyrille/Desktop/freelanceFlow/freelance-flow/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/cyrille/Desktop/freelanceFlow/freelance-flow/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JavaScript Debug.localhost:3000.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/cyrille/Desktop/projects/freelance-flow",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "pnpm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/cyrille/Desktop/projects/freelance-flow/node_modules/prettier",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "ts.external.directory.path": "/Users/cyrille/Desktop/projects/freelance-flow/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/actions/deleteUser" />
+      <recent name="$PROJECT_DIR$/src/app/actions" />
       <recent name="$PROJECT_DIR$/src/features/signIn" />
       <recent name="$PROJECT_DIR$/src/app" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="localhost:3000" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.localhost:3000" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.24807.6" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-WS-243.26053.12" />
       </set>
     </attachedChunks>
   </component>
@@ -94,7 +146,11 @@
       <workItem from="1743350171000" duration="2436000" />
       <workItem from="1743524073421" duration="1853000" />
       <workItem from="1743526107299" duration="8535000" />
-      <workItem from="1743585383489" duration="3721000" />
+      <workItem from="1743585383489" duration="8188000" />
+      <workItem from="1743668240338" duration="4315000" />
+      <workItem from="1743757830226" duration="702000" />
+      <workItem from="1744014181910" duration="5361000" />
+      <workItem from="1744041914172" duration="5924000" />
     </task>
     <task id="LOCAL-00001" summary="[chore] next 15 init">
       <option name="closed" value="true" />
@@ -120,16 +176,37 @@
       <option name="project" value="LOCAL" />
       <updated>1743591056077</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="[feat] add task and client in DB">
+      <option name="closed" value="true" />
+      <created>1743591367270</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1743591367270</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="[chore] next 15 init" />
     <MESSAGE value="[feat] add sign in and sign up comp with chadcn comp and prettier" />
     <MESSAGE value="[feat] login-logout" />
-    <option name="LAST_COMMIT_MESSAGE" value="[feat] login-logout" />
+    <MESSAGE value="[feat] add task and client in DB" />
+    <MESSAGE value="[feat] create new task" />
+    <option name="LAST_COMMIT_MESSAGE" value="[feat] create new task" />
   </component>
 </project>

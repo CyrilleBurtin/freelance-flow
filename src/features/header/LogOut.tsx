@@ -1,7 +1,7 @@
 'use client';
 
 import { DropdownMenuItem } from '@/components/ui/dropdown-menu';
-import { signOut } from '@/lib/auth-client';
+import { signOut } from '@/auth/auth-client';
 import { useRouter } from 'next/navigation';
 
 const LogOut = () => {

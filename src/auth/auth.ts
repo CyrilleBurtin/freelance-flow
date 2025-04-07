@@ -1,17 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 import { betterAuth } from 'better-auth';
 import { prismaAdapter } from 'better-auth/adapters/prisma';
-
-export interface User {
-  id: string;
-  name: string;
-  email: string;
-  image: string;
-}
-
-export interface Session {
-  user: User | null;
-}
+import { admin } from 'better-auth/plugins';
 
 const prisma = new PrismaClient();
 
@@ -29,11 +19,5 @@ export const auth = betterAuth({
       clientSecret: process.env.GITHUB_CLIENT_SECRET!,
     },
   },
-
-  /** if no database is provided, the user data will be stored in memory.
-   * Make sure to provide a database to persist user data **/
-}) as {
-  api: {
-    getSession: (options: { headers: Headers }) => Promise<Session>;
-  };
-};
+  plugins: [admin()],
+});

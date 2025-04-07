@@ -1,0 +1,8 @@
+{
+    "vs-code-prettier-eslint.prettierLast": false,
+    "notebook.defaultFormatter": null,
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+    "editor.defaultFoldingRangeProvider": null,
+    "editor.formatOnSave": true,
+    "files.autoSaveWorkspaceFilesOnly": true
+}

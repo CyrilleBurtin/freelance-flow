@@ -1,4 +1,4 @@
-import SignIn from '@/features/signIn/SignIn';
+import SignIn from '@/features/header/SignIn';
 
 const Account = () => {
   return (

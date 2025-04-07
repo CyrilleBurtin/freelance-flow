@@ -1,17 +1,15 @@
 'use client';
 
+import { signIn } from '@/auth/auth-client';
 import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { signIn } from '@/lib/auth-client';
 import { cn } from '@/lib/utils';
-import Link from 'next/link';
 import { useState } from 'react';
 
 export default function SignIn() {
@@ -20,10 +18,10 @@ export default function SignIn() {
   return (
     <Card className="m-auto max-w-md">
       <CardHeader>
-        <CardTitle className="text-lg md:text-xl">
-          connexion / inscription
+        <CardTitle className="text-center text-lg md:text-xl">
+          connexion
         </CardTitle>
-        <CardDescription className="text-xs md:text-sm">
+        <CardDescription className="text-center text-xs md:text-sm">
           Choisissez votre provider
         </CardDescription>
       </CardHeader>
@@ -116,20 +114,6 @@ export default function SignIn() {
           </div>
         </div>
       </CardContent>
-      <CardFooter>
-        <div className="flex w-full justify-center border-t py-4">
-          <p className="text-center text-xs text-neutral-500">
-            Powered by{' '}
-            <Link
-              href="https://better-auth.com"
-              className="underline"
-              target="_blank"
-            >
-              <span className="dark:text-orange-200/90">better-auth.</span>
-            </Link>
-          </p>
-        </div>
-      </CardFooter>
     </Card>
   );
 }
