@@ -1,6 +1,5 @@
 'use client';
 
-import { createTask } from '@/actions/createTask/action';
 import { useSession } from '@/auth/auth-client';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -11,6 +10,7 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover';
 import AddClient from '@/features/addTask/AddClient';
+import { createTask } from '@/features/addTask/add-task-action/action';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
