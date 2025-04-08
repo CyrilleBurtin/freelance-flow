@@ -4,12 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea5879e9-efea-4c1a-95b0-8b4909140a22" name="Changes" comment="[feat] fix DB prob">
-      <change afterPath="$PROJECT_DIR$/src/features/header/delete-user-action/action.ts" afterDir="false" />
+    <list default="true" id="ea5879e9-efea-4c1a-95b0-8b4909140a22" name="Changes" comment="[feat] create client">
+      <change afterPath="$PROJECT_DIR$/src/features/addTask/NewClient.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/addTask/create-client-action/action.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/checkFormData.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/getUser.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/createTask/action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addTask/action/action.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/addTask/AddTask.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addTask/AddTask.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/addTask/AddClient.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/addTask/AddTask.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addTask/NewTask.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/addTask/SelectClient.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addTask/SelectClient.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/header/DeleteUser.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/header/DeleteUser.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/header/delete-user-action/action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/header/delete-user-action/action.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/selectClient/SelectClient.tsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +44,8 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="showPreview" value="true" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -79,6 +87,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/features/addTask" />
       <recent name="$PROJECT_DIR$/src/app/actions/deleteUser" />
       <recent name="$PROJECT_DIR$/src/app/actions" />
       <recent name="$PROJECT_DIR$/src/features/signIn" />
@@ -127,7 +136,7 @@
       <workItem from="1743757830226" duration="702000" />
       <workItem from="1744014181910" duration="5361000" />
       <workItem from="1744041914172" duration="7388000" />
-      <workItem from="1744094916867" duration="1131000" />
+      <workItem from="1744094916867" duration="6829000" />
     </task>
     <task id="LOCAL-00001" summary="[chore] next 15 init">
       <option name="closed" value="true" />
@@ -177,7 +186,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744102858548</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="[feat] reorganise files">
+      <option name="closed" value="true" />
+      <created>1744103302468</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1744103302468</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,6 +218,8 @@
     <MESSAGE value="[feat] add task and client in DB" />
     <MESSAGE value="[feat] create new task" />
     <MESSAGE value="[feat] fix DB prob" />
-    <option name="LAST_COMMIT_MESSAGE" value="[feat] fix DB prob" />
+    <MESSAGE value="[feat] reorganise files" />
+    <MESSAGE value="[feat] create client" />
+    <option name="LAST_COMMIT_MESSAGE" value="[feat] create client" />
   </component>
 </project>

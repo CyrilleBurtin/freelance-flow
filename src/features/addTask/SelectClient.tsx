@@ -1,4 +1,4 @@
-import { Label } from '@/components/ui/label';
+import { useSession } from '@/auth/auth-client';
 import {
   Select,
   SelectContent,
@@ -6,18 +6,19 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { UserWithClients } from '@/features/addTask/AddTask';
+import { UserWithClients } from '@/features/addTask/NewTask';
 
-const SelectClient = ({ user }: { user: UserWithClients }) => {
+const SelectClient = () => {
+  const { data } = useSession();
+  const user = data?.user as UserWithClients | undefined;
+  console.log(user);
   return (
-    <>
-      <Label htmlFor="clientId">Client (optionnel)</Label>
+    <div className="w-full">
       <Select>
-        <SelectTrigger>
+        <SelectTrigger className="w-full">
           <SelectValue placeholder="client" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="">Aucun client</SelectItem>
           {user?.clients?.map(({ name, id }) => (
             <SelectItem value={id} key={id}>
               {name}
@@ -25,7 +26,7 @@ const SelectClient = ({ user }: { user: UserWithClients }) => {
           ))}
         </SelectContent>
       </Select>
-    </>
+    </div>
   );
 };
 
