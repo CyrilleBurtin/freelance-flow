@@ -6,12 +6,19 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { UserWithClients } from '@/features/addTask/NewTask';
+import { User } from '@prisma/client';
+
+interface UserWithClients extends User {
+  clients: {
+    id: string;
+    name: string;
+  }[];
+}
 
 const SelectClient = () => {
   const { data } = useSession();
-  const user = data?.user as UserWithClients | undefined;
-  console.log(user);
+  const user = data?.user as unknown as UserWithClients;
+  console.log(data);
   return (
     <div className="w-full">
       <Select>

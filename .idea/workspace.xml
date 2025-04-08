@@ -4,19 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea5879e9-efea-4c1a-95b0-8b4909140a22" name="Changes" comment="[feat] create client">
-      <change afterPath="$PROJECT_DIR$/src/features/addTask/NewClient.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/addTask/create-client-action/action.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/checkFormData.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/getUser.ts" afterDir="false" />
+    <list default="true" id="ea5879e9-efea-4c1a-95b0-8b4909140a22" name="Changes" comment="[feat] add field Task and Clients to session">
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/addTask/AddClient.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/addTask/AddTask.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addTask/NewTask.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/migrations/20250407074744_init/migration.sql" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/migrations/20250408123026_init/migration.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auth/auth-client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/auth-client.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auth/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/auth.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/addTask/NewTask.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addTask/NewTask.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/addTask/SelectClient.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addTask/SelectClient.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/header/DeleteUser.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/header/DeleteUser.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/header/delete-user-action/action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/header/delete-user-action/action.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/selectClient/SelectClient.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/addTask/add-task-action/action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addTask/add-task-action/action.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/getUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/getUser.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +41,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
     <option name="showPreview" value="true" />
   </component>
   <component name="ProjectColorInfo">{
@@ -56,32 +53,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JavaScript Debug.localhost:3000.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/cyrille/Desktop/projects/freelance-flow",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "pnpm",
-    "prettierjs.PrettierConfiguration.Package": "/Users/cyrille/Desktop/projects/freelance-flow/node_modules/prettier",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "ts.external.directory.path": "/Users/cyrille/Desktop/projects/freelance-flow/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JavaScript Debug.localhost:3000.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/cyrille/Desktop/projects/freelance-flow&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/cyrille/Desktop/projects/freelance-flow/node_modules/prettier&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/cyrille/Desktop/projects/freelance-flow/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -136,7 +133,8 @@
       <workItem from="1743757830226" duration="702000" />
       <workItem from="1744014181910" duration="5361000" />
       <workItem from="1744041914172" duration="7388000" />
-      <workItem from="1744094916867" duration="6829000" />
+      <workItem from="1744094916867" duration="8881000" />
+      <workItem from="1744114838942" duration="7093000" />
     </task>
     <task id="LOCAL-00001" summary="[chore] next 15 init">
       <option name="closed" value="true" />
@@ -194,7 +192,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744103302468</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="[feat] create client">
+      <option name="closed" value="true" />
+      <created>1744113314416</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1744113314416</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,6 +226,7 @@
     <MESSAGE value="[feat] fix DB prob" />
     <MESSAGE value="[feat] reorganise files" />
     <MESSAGE value="[feat] create client" />
-    <option name="LAST_COMMIT_MESSAGE" value="[feat] create client" />
+    <MESSAGE value="[feat] add field Task and Clients to session" />
+    <option name="LAST_COMMIT_MESSAGE" value="[feat] add field Task and Clients to session" />
   </component>
 </project>

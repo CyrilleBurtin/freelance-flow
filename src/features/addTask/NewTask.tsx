@@ -21,6 +21,9 @@ export type UserWithClients = {
   createdAt: Date;
   updatedAt: Date;
   image?: string | null;
+  tasks?: {
+    id: string;
+  };
   clients?: {
     id: string;
     name: string;

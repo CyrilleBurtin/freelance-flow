@@ -1,26 +1,17 @@
 'use server';
 
-import { auth } from '@/auth/auth';
+import getUser from '@/lib/getUser';
 import { PrismaClient } from '@prisma/client';
-import { headers } from 'next/headers';
 
 const prisma = new PrismaClient();
 
 export const createTask = async (formData: FormData) => {
-  const formDataObj = Object.fromEntries(formData.entries());
-  console.log('FormData content:', formDataObj);
-
-  const session = await auth.api.getSession({
-    headers: await headers(),
-  });
-
-  const user = session?.user;
-  console.log({ user });
+  const user = await getUser();
+  console.log({ efzdfsd: user });
 
   if (!user) {
     return;
   }
-
   const rawFormData = {
     title: formData.get('title') as string,
     deadline: formData.get('deadline') as string,
@@ -45,7 +36,7 @@ export const createTask = async (formData: FormData) => {
         title: rawFormData.title,
         deadline: new Date(rawFormData.deadline),
         clientId: rawFormData.clientId || null,
-        userId: user.id,
+        userId: user?.id,
         status: 'pending',
         order: 0,
       },
