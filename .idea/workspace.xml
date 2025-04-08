@@ -5,37 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea5879e9-efea-4c1a-95b0-8b4909140a22" name="Changes" comment="[feat] create new task">
-      <change afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prisma/migrations/20250407074744_init/migration.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/createTask/action.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/deleteUser/action.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/auth/auth-client.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/auth/auth.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/popover.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/select.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/addTask/AddClient.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/addTask/AddTask.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/addTask/SelectClient.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/header/DeleteUser.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/header/SignIn.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/selectClient/SelectClient.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock 2.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/migrations/20250327193347_freelance_flow_initt/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/migrations/20250331133808_init/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/migrations/20250401172719_/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/migrations/20250402105405_add_client_and_task/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/auth/[...all]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/auth/[...all]/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/compte/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/compte/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/header/LogOut.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/header/LogOut.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/signIn/SignIn.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/auth-client.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/auth.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/migrations/20250407074744_init/migration.sql" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/migrations/20250407074744_init/migration.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +16,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="prisma" />
+        <entry key="$PROJECT_DIR$" value="save" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -59,7 +30,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;git@github.com:CyrilleBurtin/freelance-flow.git&quot;,
-    &quot;accountId&quot;: &quot;bd032acf-cd50-4085-921c-547074cd47ab&quot;
+    &quot;accountId&quot;: &quot;aaae5d81-8029-4c0e-ab79-c5ce2392d86f&quot;
   }
 }</component>
   <component name="ProblemsViewState">
@@ -89,6 +60,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "pnpm",
     "prettierjs.PrettierConfiguration.Package": "/Users/cyrille/Desktop/projects/freelance-flow/node_modules/prettier",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "preferences.keymap",
     "ts.external.directory.path": "/Users/cyrille/Desktop/projects/freelance-flow/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
@@ -116,6 +88,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.localhost:3000" />
         <item itemvalue="JavaScript Debug.localhost:3000" />
       </list>
     </recent_temporary>
@@ -150,7 +123,8 @@
       <workItem from="1743668240338" duration="4315000" />
       <workItem from="1743757830226" duration="702000" />
       <workItem from="1744014181910" duration="5361000" />
-      <workItem from="1744041914172" duration="5924000" />
+      <workItem from="1744041914172" duration="7388000" />
+      <workItem from="1744094916867" duration="763000" />
     </task>
     <task id="LOCAL-00001" summary="[chore] next 15 init">
       <option name="closed" value="true" />
@@ -184,7 +158,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743591367270</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="[feat] create new task">
+      <option name="closed" value="true" />
+      <created>1744053768376</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1744053768376</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
