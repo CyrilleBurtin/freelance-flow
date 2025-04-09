@@ -19,10 +19,7 @@ const NewTask = () => {
   const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
   const [isOpen, setIsOpen] = useState(false);
-  const refreshData = () => {
-    console.log('toto');
-    router.refresh();
-  };
+
   const handleFormAction = async (formData: FormData) => {
     const result = await createTask(formData);
 

@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea5879e9-efea-4c1a-95b0-8b4909140a22" name="Changes" comment="[feat] add task and client working">
-      <change afterPath="$PROJECT_DIR$/src/features/taskList/task-list-action/action.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/taskList/TasksList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/taskList/TasksList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/addTask/SelectClient.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addTask/SelectClient.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +35,6 @@
 }</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="ProjectErrors" />
-    <option name="showPreview" value="true" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -129,7 +127,7 @@
       <workItem from="1744041914172" duration="7388000" />
       <workItem from="1744094916867" duration="8881000" />
       <workItem from="1744114838942" duration="7108000" />
-      <workItem from="1744134125364" duration="15340000" />
+      <workItem from="1744134125364" duration="16031000" />
     </task>
     <task id="LOCAL-00001" summary="[chore] next 15 init">
       <option name="closed" value="true" />
@@ -211,7 +209,23 @@
       <option name="project" value="LOCAL" />
       <updated>1744210843096</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="[feat] add task and client working">
+      <option name="closed" value="true" />
+      <created>1744212101740</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1744212101740</updated>
+    </task>
+    <task id="LOCAL-00012" summary="[feat] add task and client working">
+      <option name="closed" value="true" />
+      <created>1744212283884</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1744212283884</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -7,15 +7,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { User } from '@prisma/client';
 import { useEffect, useState } from 'react';
 
-interface UserWithClients extends User {
-  clients: {
-    id: string;
-    name: string;
-  }[];
-}
 interface Client {
   id: string;
   name: string;
@@ -23,7 +16,6 @@ interface Client {
 
 const SelectClient = () => {
   const [clients, setClients] = useState<Client[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchClients();
@@ -41,7 +33,6 @@ const SelectClient = () => {
   }, []);
 
   const fetchClients = async () => {
-    setIsLoading(true);
     try {
       const response = await fetch('/api/clients');
       const data = await response.json();
@@ -49,7 +40,6 @@ const SelectClient = () => {
     } catch (error) {
       console.error('Erreur lors de la récupération des clients:', error);
     } finally {
-      setIsLoading(false);
     }
   };
 
