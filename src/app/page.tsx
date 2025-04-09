@@ -1,4 +1,5 @@
 import NewTask from '@/features/addTask/NewTask';
+import TasksList from '@/features/taskList/TasksList';
 
 export default function Home() {
   return (
@@ -6,6 +7,7 @@ export default function Home() {
       <main className="row-start-2 flex flex-col items-center gap-[32px] sm:items-start">
         home
         <NewTask />
+        <TasksList />
       </main>
     </div>
   );

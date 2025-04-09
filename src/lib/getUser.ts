@@ -17,17 +17,13 @@ const getUser = async () => {
     return;
   }
 
-  const toto = await prisma.user.findUnique({
+  return prisma.user.findUnique({
     where: { id: sessionUser.id },
     include: {
       tasks: true,
       clients: true,
     },
   });
-
-  console.log({ toto });
-
-  return toto;
 };
 
 export default getUser;

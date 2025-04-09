@@ -2,12 +2,12 @@
 
 import getUser from '@/lib/getUser';
 import { PrismaClient } from '@prisma/client';
+import { revalidatePath } from 'next/cache';
 
 const prisma = new PrismaClient();
 
 export const createTask = async (formData: FormData) => {
   const user = await getUser();
-  console.log({ efzdfsd: user });
 
   if (!user) {
     return;
@@ -41,6 +41,9 @@ export const createTask = async (formData: FormData) => {
         order: 0,
       },
     });
+
+    revalidatePath('/');
+
     return { success: true };
   } catch (error) {
     console.error(error);

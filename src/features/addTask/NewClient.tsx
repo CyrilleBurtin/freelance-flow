@@ -8,41 +8,36 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover';
-import SelectClient from '@/features/addTask/SelectClient';
 import { createClient } from '@/features/addTask/create-client-action/action';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useTransition } from 'react';
 
 const NewClient = () => {
-  const router = useRouter();
   const [error, setError] = useState<string | null>(null);
-
+  const [isPending, startTransition] = useTransition();
+  const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
   const handleSubmit = async (formData: FormData) => {
     const result = await createClient(formData);
-    if (!result) {
-      setError('Une erreur est survenue');
-      return;
-    }
+    if (result?.success) {
+      startTransition(() => {
+        // Créer un événement personnalisé pour signaler le changement des clients
+        const event = new CustomEvent('clientsUpdated');
+        window.dispatchEvent(event);
 
-    if (result.success) {
-      router.refresh();
-      return;
+        router.refresh();
+        setIsOpen(false);
+      });
+    } else if (result?.error) {
+      setError(result.error);
     }
-
-    if ('needsClient' in result && result.needsClient) {
-      router.push('/clients/new');
-      return;
-    }
-
-    setError(result.error || 'Une erreur est survenue');
   };
 
   return (
     <div className="flex gap-4">
-      <SelectClient />
-      <Popover>
+      <Popover open={isOpen} onOpenChange={setIsOpen}>
         <PopoverTrigger asChild>
-          <Button>Nouveau client</Button>
+          <Button className="cursor-pointer">Nouveau client</Button>
         </PopoverTrigger>
         <PopoverContent>
           <form action={handleSubmit}>
@@ -55,7 +50,13 @@ const NewClient = () => {
             <Input id="name" name="name" type="text" required />
             <Label htmlFor="email">Email</Label>
             <Input id="email" name="email" type="email" required />
-            <Button type="submit">Ajouter</Button>
+            <Button
+              className="cursor-pointer"
+              type="submit"
+              disabled={isPending}
+            >
+              {isPending ? 'Ajout en cours...' : 'Ajouter'}
+            </Button>
           </form>
         </PopoverContent>
       </Popover>

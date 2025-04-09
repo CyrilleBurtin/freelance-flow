@@ -33,7 +33,10 @@ const Header = async () => {
         <DropdownMenu>
           <DropdownMenuTrigger>
             <Avatar>
-              <AvatarImage src={image || undefined} alt={name} />
+              <AvatarImage
+                src={image || undefined}
+                alt={name || "avatar de l'utilisateur"}
+              />
               <AvatarFallback>{name?.[0] ?? '?'}</AvatarFallback>
             </Avatar>
           </DropdownMenuTrigger>

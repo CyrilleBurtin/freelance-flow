@@ -3,13 +3,12 @@
 import checkFormData from '@/lib/checkFormData';
 import getUser from '@/lib/getUser';
 import { PrismaClient } from '@prisma/client';
+import { revalidatePath } from 'next/cache';
 
 export const createClient = async (formData: FormData) => {
   await checkFormData(formData);
   const prisma = new PrismaClient();
-
   const user = await getUser();
-
   const rawFormData = {
     name: formData.get('name') as string,
     email: formData.get('email') as string,
@@ -32,6 +31,8 @@ export const createClient = async (formData: FormData) => {
         userId: user?.id,
       },
     });
+    revalidatePath('/');
+
     return { success: true };
   } catch (error) {
     console.error(error);

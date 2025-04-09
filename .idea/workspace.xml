@@ -5,14 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea5879e9-efea-4c1a-95b0-8b4909140a22" name="Changes" comment="[feat] add field Task and Clients to session">
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/api/clients/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/api/tasks/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/taskList/TasksList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/migrations/20250407074744_init/migration.sql" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/migrations/20250408123026_init/migration.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/auth/auth-client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/auth-client.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/auth/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/auth.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/addTask/NewClient.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addTask/NewClient.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/addTask/NewTask.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addTask/NewTask.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/addTask/SelectClient.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addTask/SelectClient.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/addTask/add-task-action/action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addTask/add-task-action/action.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/addTask/create-client-action/action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addTask/create-client-action/action.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/header/Header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/getUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/getUser.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +44,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
     <option name="showPreview" value="true" />
   </component>
   <component name="ProjectColorInfo">{
@@ -134,7 +137,8 @@
       <workItem from="1744014181910" duration="5361000" />
       <workItem from="1744041914172" duration="7388000" />
       <workItem from="1744094916867" duration="8881000" />
-      <workItem from="1744114838942" duration="7093000" />
+      <workItem from="1744114838942" duration="7108000" />
+      <workItem from="1744134125364" duration="14130000" />
     </task>
     <task id="LOCAL-00001" summary="[chore] next 15 init">
       <option name="closed" value="true" />
@@ -200,7 +204,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744113314416</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="[feat] add field Task and Clients to session">
+      <option name="closed" value="true" />
+      <created>1744127984507</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1744127984507</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
