@@ -1,5 +1,3 @@
-'use client';
-
 import {
   Card,
   CardContent,
@@ -8,45 +6,39 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { Task } from '@prisma/client';
-import { useEffect, useState } from 'react';
+import { getTasks } from '@/features/taskList/task-list-action/action';
 
-const TasksList = () => {
-  const [tasks, setTasks] = useState<Task[]>([]);
+const formatDeadline = (date: Date) => {
+  return date.toLocaleDateString('fr-FR', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  });
+};
 
-  const TasksList = async () => {
-    try {
-      const response = await fetch('/api/tasks');
-      const data = await response.json();
-      setTasks(data.tasks);
-    } catch (error) {
-      console.error('Erreur lors de la récupération des clients:', error);
-    }
-  };
+async function TasksList() {
+  const { tasks, error } = await getTasks();
 
-  useEffect(() => {
-    TasksList();
-  }, []);
+  if (error) {
+    return <div className="py-4 text-center text-red-500">{error}</div>;
+  }
+
+  if (tasks.length === 0) {
+    return <div className="py-4 text-center">Aucune tâche trouvée</div>;
+  }
 
   return (
-    <div>
+    <div className="space-y-4">
       {tasks.map((task) => (
-        <Card>
+        <Card key={task.id} className="mb-4">
           <CardHeader>
             <CardTitle>{task.title}</CardTitle>
             <CardDescription>{task.clientId}</CardDescription>
           </CardHeader>
           <CardContent>
-            <p>
-              deadline :{' '}
-              {new Date(task.deadline).toLocaleDateString('fr-FR', {
-                day: 'numeric',
-                month: 'long',
-                year: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit',
-              })}
-            </p>
+            <p>deadline : {formatDeadline(new Date(task.deadline))}</p>
           </CardContent>
           <CardFooter>
             <p>{task.status}</p>
@@ -55,6 +47,6 @@ const TasksList = () => {
       ))}
     </div>
   );
-};
+}
 
 export default TasksList;
