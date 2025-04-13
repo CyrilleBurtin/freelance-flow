@@ -1,4 +1,2 @@
-export const getQueryKey = (
-  queryName: string,
-  variables: string | undefined,
-) => (variables ? [queryName, variables] : [queryName]);
+export const getQueryKey = (queryName: string, variables?: string) =>
+  variables ? [queryName, variables] : [queryName];

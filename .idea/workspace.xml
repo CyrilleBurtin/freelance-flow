@@ -5,21 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea5879e9-efea-4c1a-95b0-8b4909140a22" name="Changes" comment="[feat] reactQuery fetch client via useGetClients">
-      <change afterPath="$PROJECT_DIR$/src/app/api/queries/queryKeys.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/api/queries/useGetClients.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/providers.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/sonner.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/getQueryKey.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/api/queries/useGetTasks.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eslint.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/eslint.config.mjs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/clients/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/routes/clients/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/tasks/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/routes/tasks/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/addTask/NewClient.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addTask/NewClient.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/addTask/SelectClient.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addTask/SelectClient.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/addTask/create-client-action/action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addTask/create-client-action/action.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/queries/queryKeys.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/queries/queryKeys.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/queries/useGetClients.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/queries/useGetClients.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/routes/tasks/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/routes/tasks/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/addTask/NewTask.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addTask/NewTask.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/getQueryKey.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/getQueryKey.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,32 +52,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JavaScript Debug.localhost:3000.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;tanstak-query&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/cyrille/Desktop/projects/freelance-flow&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/cyrille/Desktop/projects/freelance-flow/node_modules/prettier&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/cyrille/Desktop/projects/freelance-flow/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JavaScript Debug.localhost:3000.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/cyrille/Desktop/projects/freelance-flow",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "pnpm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/cyrille/Desktop/projects/freelance-flow/node_modules/prettier",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "ts.external.directory.path": "/Users/cyrille/Desktop/projects/freelance-flow/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -102,6 +96,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.localhost:3000" />
         <item itemvalue="JavaScript Debug.localhost:3000" />
         <item itemvalue="JavaScript Debug.localhost:3000" />
       </list>

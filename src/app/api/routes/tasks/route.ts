@@ -20,13 +20,14 @@ export async function GET() {
         title: true,
         deadline: true,
         status: true,
+        order: true,
       },
     });
 
     return NextResponse.json({ tasks });
   } catch (error) {
     console.error('Erreur lors de la récupération des clients:', error);
-    return NextResponse.json({ clients: [] }, { status: 500 });
+    return NextResponse.json({ tasks: [] }, { status: 500 });
   } finally {
     await prisma.$disconnect();
   }

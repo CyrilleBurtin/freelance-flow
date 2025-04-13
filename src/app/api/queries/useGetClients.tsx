@@ -11,9 +11,11 @@ export interface Client {
 
 export async function fetchClients(): Promise<Client[]> {
   const response = await fetch('/api/routes/clients');
+
   if (!response.ok) {
     throw new Error('Erreur lors de la récupération des clients');
   }
+
   const { clients } = await response.json();
 
   return clients;
@@ -21,7 +23,7 @@ export async function fetchClients(): Promise<Client[]> {
 
 const useGetClients = (userId: string | undefined) => {
   return useQuery({
-    queryKey: getQueryKey(QUERY_KEYS.USER, userId),
+    queryKey: getQueryKey(QUERY_KEYS.CLIENTS, userId),
     queryFn: fetchClients,
   });
 };
