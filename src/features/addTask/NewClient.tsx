@@ -11,17 +11,25 @@ import {
 import { createClient } from '@/features/addTask/create-client-action/action';
 import { useRouter } from 'next/navigation';
 import { useState, useTransition } from 'react';
+import { toast } from 'sonner';
 
 const NewClient = () => {
   const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
+
   const handleSubmit = async (formData: FormData) => {
     const result = await createClient(formData);
+
     if (result?.success) {
       startTransition(() => {
-        // Créer un événement personnalisé pour signaler le changement des clients
+        const id = toast(result.newClient);
+        toast.success(`${result.newClient} ajouté vos clients`, {
+          id,
+          duration: 5000,
+          position: 'top-right',
+        });
         const event = new CustomEvent('clientsUpdated');
         window.dispatchEvent(event);
 

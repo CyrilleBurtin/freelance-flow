@@ -4,9 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea5879e9-efea-4c1a-95b0-8b4909140a22" name="Changes" comment="[feat] add task and client working">
+    <list default="true" id="ea5879e9-efea-4c1a-95b0-8b4909140a22" name="Changes" comment="[feat] reactQuery fetch client via useGetClients">
+      <change afterPath="$PROJECT_DIR$/src/app/api/queries/queryKeys.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/api/queries/useGetClients.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/providers.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ui/sonner.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/getQueryKey.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eslint.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/eslint.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/clients/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/routes/clients/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/tasks/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/routes/tasks/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/addTask/NewClient.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addTask/NewClient.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/addTask/SelectClient.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addTask/SelectClient.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/addTask/create-client-action/action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addTask/create-client-action/action.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="save" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -50,7 +63,7 @@
     &quot;JavaScript Debug.localhost:3000.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;tanstak-query&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/cyrille/Desktop/projects/freelance-flow&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
@@ -76,11 +89,11 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/api/queries" />
+      <recent name="$PROJECT_DIR$/src/app/api/routes" />
       <recent name="$PROJECT_DIR$/src/features/addTask" />
       <recent name="$PROJECT_DIR$/src/app/actions/deleteUser" />
       <recent name="$PROJECT_DIR$/src/app/actions" />
-      <recent name="$PROJECT_DIR$/src/features/signIn" />
-      <recent name="$PROJECT_DIR$/src/app" />
     </key>
   </component>
   <component name="RunManager">
@@ -127,7 +140,8 @@
       <workItem from="1744041914172" duration="7388000" />
       <workItem from="1744094916867" duration="8881000" />
       <workItem from="1744114838942" duration="7108000" />
-      <workItem from="1744134125364" duration="16031000" />
+      <workItem from="1744134125364" duration="23637000" />
+      <workItem from="1744375093872" duration="11022000" />
     </task>
     <task id="LOCAL-00001" summary="[chore] next 15 init">
       <option name="closed" value="true" />
@@ -225,7 +239,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744212283884</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="[feat] add task and client working">
+      <option name="closed" value="true" />
+      <created>1744212672348</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1744212672348</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,6 +275,7 @@
     <MESSAGE value="[feat] create client" />
     <MESSAGE value="[feat] add field Task and Clients to session" />
     <MESSAGE value="[feat] add task and client working" />
-    <option name="LAST_COMMIT_MESSAGE" value="[feat] add task and client working" />
+    <MESSAGE value="[feat] reactQuery fetch client via useGetClients" />
+    <option name="LAST_COMMIT_MESSAGE" value="[feat] reactQuery fetch client via useGetClients" />
   </component>
 </project>

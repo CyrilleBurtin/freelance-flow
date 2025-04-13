@@ -1,4 +1,5 @@
 import { FlatCompat } from '@eslint/eslintrc';
+import pluginQuery from '@tanstack/eslint-plugin-query';
 import reactCompilerPlugin from 'eslint-plugin-react-compiler';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -16,9 +17,11 @@ const eslintConfig = [
     name: 'react-compiler/recommended',
     plugins: {
       'react-compiler': reactCompilerPlugin,
+      'eslint-plugin-query': pluginQuery,
     },
     rules: {
       'react-compiler/react-compiler': 'error',
+      '@tanstack/query/exhaustive-deps': 'error',
     },
   },
 ];

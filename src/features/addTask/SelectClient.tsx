@@ -1,5 +1,7 @@
 'use client';
 
+import useGetClients from '@/app/api/queries/useGetClients';
+import { useSession } from '@/auth/auth-client';
 import {
   Select,
   SelectContent,
@@ -7,7 +9,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 interface Client {
   id: string;
@@ -15,14 +17,14 @@ interface Client {
 }
 
 const SelectClient = () => {
-  const [clients, setClients] = useState<Client[]>([]);
+  const { data: sessionData } = useSession();
+  const userId = sessionData?.session.id;
+
+  const { data: clients = [], refetch } = useGetClients(userId);
 
   useEffect(() => {
-    fetchClients();
-
-    // Écouter les événements de mise à jour des clients
     const handleClientsUpdated = () => {
-      fetchClients();
+      refetch();
     };
 
     window.addEventListener('clientsUpdated', handleClientsUpdated);
@@ -30,31 +32,21 @@ const SelectClient = () => {
     return () => {
       window.removeEventListener('clientsUpdated', handleClientsUpdated);
     };
-  }, []);
+  }, [refetch]);
 
-  const fetchClients = async () => {
-    try {
-      const response = await fetch('/api/clients');
-      const data = await response.json();
-      setClients(data.clients);
-    } catch (error) {
-      console.error('Erreur lors de la récupération des clients:', error);
-    } finally {
-    }
-  };
-
-  useEffect(() => {
-    fetchClients();
-  }, []);
+  const isClientListEmpty = clients.length === 0;
+  const placeholderText = isClientListEmpty
+    ? 'ajoutez un client => '
+    : 'clients';
 
   return (
     <div className="w-full">
       <Select>
-        <SelectTrigger className="w-full">
-          <SelectValue placeholder="client" />
+        <SelectTrigger className="w-full" disabled={isClientListEmpty}>
+          <SelectValue placeholder={placeholderText} />
         </SelectTrigger>
         <SelectContent>
-          {clients?.map(({ name, id }) => (
+          {clients?.map(({ name, id }: Client) => (
             <SelectItem value={id} key={id}>
               {name}
             </SelectItem>

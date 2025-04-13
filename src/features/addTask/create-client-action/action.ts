@@ -24,7 +24,7 @@ export const createClient = async (formData: FormData) => {
   }
 
   try {
-    await prisma.client.create({
+    const newClient = await prisma.client.create({
       data: {
         name: rawFormData.name,
         email: rawFormData.email,
@@ -33,10 +33,13 @@ export const createClient = async (formData: FormData) => {
     });
     revalidatePath('/');
 
-    return { success: true };
+    return { success: true, newClient: newClient.name };
   } catch (error) {
     console.error(error);
-    return { success: false, error: 'Erreur lors de la création de la tâche' };
+    return {
+      success: false,
+      error: 'Erreur lors de la création de la tâche',
+    };
   } finally {
     await prisma.$disconnect();
   }

@@ -19,6 +19,9 @@ export async function GET() {
         id: true,
         name: true,
       },
+      orderBy: {
+        createdAt: 'desc',
+      },
     });
 
     return NextResponse.json({ clients });
