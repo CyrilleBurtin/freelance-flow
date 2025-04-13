@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import {
   Popover,
+  PopoverAnchor,
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover';
@@ -42,33 +43,34 @@ const NewClient = () => {
   };
 
   return (
-    <div className="flex gap-4">
-      <Popover open={isOpen} onOpenChange={setIsOpen}>
-        <PopoverTrigger asChild>
-          <Button className="cursor-pointer">Nouveau client</Button>
-        </PopoverTrigger>
-        <PopoverContent>
-          <form action={handleSubmit}>
-            {error && (
-              <div className="mb-4 rounded bg-red-100 p-2 text-red-700">
-                {error}
-              </div>
-            )}
-            <Label htmlFor="name">Nom</Label>
-            <Input id="name" name="name" type="text" required />
-            <Label htmlFor="email">Email</Label>
-            <Input id="email" name="email" type="email" required />
-            <Button
-              className="cursor-pointer"
-              type="submit"
-              disabled={isPending}
-            >
-              {isPending ? 'Ajout en cours...' : 'Ajouter'}
-            </Button>
-          </form>
-        </PopoverContent>
-      </Popover>
-    </div>
+    <Popover open={isOpen} onOpenChange={setIsOpen}>
+      <PopoverTrigger asChild className="w-10">
+        <Button className="cursor-pointer">+</Button>
+      </PopoverTrigger>
+      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform">
+        <PopoverAnchor />
+      </div>
+      <PopoverContent
+        side="top"
+        onInteractOutside={(e) => e.stopPropagation()}
+        onPointerDownOutside={(e) => e.stopPropagation()}
+      >
+        <form action={handleSubmit}>
+          {error && (
+            <div className="mb-4 rounded bg-red-100 p-2 text-red-700">
+              {error}
+            </div>
+          )}
+          <Label htmlFor="name">Nom</Label>
+          <Input id="name" name="name" type="text" required />
+          <Label htmlFor="email">Email</Label>
+          <Input id="email" name="email" type="email" required />
+          <Button className="cursor-pointer" type="submit" disabled={isPending}>
+            {isPending ? 'Ajout en cours...' : 'Ajouter'}
+          </Button>
+        </form>
+      </PopoverContent>
+    </Popover>
   );
 };
 

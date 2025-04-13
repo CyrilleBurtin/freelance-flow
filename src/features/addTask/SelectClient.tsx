@@ -35,25 +35,21 @@ const SelectClient = () => {
   }, [refetch]);
 
   const isClientListEmpty = clients.length === 0;
-  const placeholderText = isClientListEmpty
-    ? 'ajoutez un client => '
-    : 'clients';
+  const placeholderText = isClientListEmpty ? 'auncun client' : 'clients';
 
   return (
-    <div className="w-full">
-      <Select>
-        <SelectTrigger className="w-full" disabled={isClientListEmpty}>
-          <SelectValue placeholder={placeholderText} />
-        </SelectTrigger>
-        <SelectContent>
-          {clients?.map(({ name, id }: Client) => (
-            <SelectItem value={id} key={id}>
-              {name}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
-    </div>
+    <Select>
+      <SelectTrigger disabled={isClientListEmpty} className="w-full">
+        <SelectValue placeholder={placeholderText} />
+      </SelectTrigger>
+      <SelectContent>
+        {clients?.map(({ name, id }: Client) => (
+          <SelectItem value={id} key={id}>
+            {name}
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
   );
 };
 

@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import {
   Popover,
+  PopoverAnchor,
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover';
@@ -34,14 +35,17 @@ const NewTask = () => {
   };
 
   return (
-    <div className="relative">
+    <>
       <Popover open={isOpen} onOpenChange={setIsOpen}>
         <PopoverTrigger asChild>
-          <Button className="fixed top-20 left-20 cursor-pointer bg-green-500">
+          <Button className="fixed right-20 bottom-20 cursor-pointer bg-green-500">
             +
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="absolute top-0 left-0 w-96">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform">
+          <PopoverAnchor />
+        </div>
+        <PopoverContent side="top" className="w-[350]">
           <form action={handleFormAction}>
             {error && (
               <div className="mb-4 rounded bg-red-100 p-2 text-red-700">
@@ -62,7 +66,7 @@ const NewTask = () => {
                   required
                 />
               </div>
-              <div className="flex">
+              <div className="flex gap-4">
                 <SelectClient />
                 <NewClient />
               </div>
@@ -73,7 +77,7 @@ const NewTask = () => {
           </form>
         </PopoverContent>
       </Popover>
-    </div>
+    </>
   );
 };
 

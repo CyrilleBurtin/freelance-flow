@@ -27,7 +27,7 @@ const Header = async () => {
   const { image, name } = user || {};
 
   return (
-    <div className="flex justify-between gap-4 bg-gray-300 px-8 py-2">
+    <div className="fixed flex w-full justify-between gap-4 bg-gray-300 px-8 py-2">
       <p>Freelance-Flow</p>
       {user ? (
         <DropdownMenu>
