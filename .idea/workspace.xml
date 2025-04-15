@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea5879e9-efea-4c1a-95b0-8b4909140a22" name="Changes" comment="[feat] add client and task adjust popover position">
+    <list default="true" id="ea5879e9-efea-4c1a-95b0-8b4909140a22" name="Changes" comment="[feat] switch from popover to dialog for popup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/addTask/NewClient.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addTask/NewClient.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/addTask/NewTask.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addTask/NewTask.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +129,7 @@
       <workItem from="1744114838942" duration="7108000" />
       <workItem from="1744134125364" duration="23637000" />
       <workItem from="1744375093872" duration="11022000" />
-      <workItem from="1744625011482" duration="1788000" />
+      <workItem from="1744625011482" duration="4990000" />
     </task>
     <task id="LOCAL-00001" summary="[chore] next 15 init">
       <option name="closed" value="true" />
@@ -255,7 +251,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744575030534</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="[feat] switch from popover to dialog for popup">
+      <option name="closed" value="true" />
+      <created>1744699045157</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1744699045157</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,6 +290,7 @@
     <MESSAGE value="[feat] reactQuery fetch client via useGetClients" />
     <MESSAGE value="[feat] reactQuery fetch tasks via useGetTasks" />
     <MESSAGE value="[feat] add client and task adjust popover position" />
-    <option name="LAST_COMMIT_MESSAGE" value="[feat] add client and task adjust popover position" />
+    <MESSAGE value="[feat] switch from popover to dialog for popup" />
+    <option name="LAST_COMMIT_MESSAGE" value="[feat] switch from popover to dialog for popup" />
   </component>
 </project>
