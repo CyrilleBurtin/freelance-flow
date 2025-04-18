@@ -1,7 +1,7 @@
 'use client';
 
 import { QUERY_KEYS } from '@/app/api/queries/queryKeys';
-import { getQueryKey } from '@/lib/getQueryKey';
+import { getQueryKey } from '@/lib/GetQueryKey/getQueryKey';
 import { useQuery } from '@tanstack/react-query';
 
 export interface Client {

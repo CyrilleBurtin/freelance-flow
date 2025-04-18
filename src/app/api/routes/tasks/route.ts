@@ -1,4 +1,4 @@
-import getUser from '@/lib/getUser';
+import getUser from '@/lib/getUser/getUser';
 import { PrismaClient } from '@prisma/client';
 import { NextResponse } from 'next/server';
 

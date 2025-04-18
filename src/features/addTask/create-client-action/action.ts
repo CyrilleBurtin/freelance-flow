@@ -1,7 +1,7 @@
 'use server';
 
-import checkFormData from '@/lib/checkFormData';
-import getUser from '@/lib/getUser';
+import checkFormData from '@/lib/checkFormData/checkFormData';
+import getUser from '@/lib/getUser/getUser';
 import { PrismaClient } from '@prisma/client';
 import { revalidatePath } from 'next/cache';
 

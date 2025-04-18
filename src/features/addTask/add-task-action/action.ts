@@ -1,6 +1,6 @@
 'use server';
 
-import getUser from '@/lib/getUser';
+import getUser from '@/lib/getUser/getUser';
 import { PrismaClient } from '@prisma/client';
 import { revalidatePath } from 'next/cache';
 

@@ -7,16 +7,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { getTasks } from '@/features/taskList/task-list-action/action';
-
-const formatDeadline = (date: Date) => {
-  return date.toLocaleDateString('fr-FR', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-  });
-};
+import { formatDeadline } from '@/lib/formatDate/formatDate';
 
 async function TasksList() {
   const { tasks, error } = await getTasks();
