@@ -17,10 +17,10 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import NewClient from '@/features/addTask/NewClient';
-import SelectClient from '@/features/addTask/SelectClient';
-import { createTask } from '@/features/addTask/add-task-action/action';
-import { formSchema } from '@/features/addTask/formSchema';
+import CreateClient from '@/features/create-client/CreateClient';
+import SelectClient from '@/features/create-task/SelectClient';
+import { createTask } from '@/features/create-task/action';
+import { taskSchema } from '@/features/create-task/taskSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from 'next/navigation';
 import { useState, useTransition } from 'react';
@@ -28,24 +28,24 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import { z } from 'zod';
 
-type FormSchema = z.output<typeof formSchema>;
+type TaskSchema = z.output<typeof taskSchema>;
 
-const NewTask = () => {
+const CreateTask = () => {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const [isOpen, setIsOpen] = useState(false);
 
-  const form = useForm<FormSchema>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<TaskSchema>({
+    resolver: zodResolver(taskSchema),
+    defaultValues: {
+      title: '',
+    },
   });
 
-  async function onSubmit(data: z.infer<typeof formSchema>) {
+  async function onSubmit(data: TaskSchema) {
     const formData = new FormData();
     formData.append('title', data.title);
-
-    if (data.deadline) {
-      formData.append('deadline', data.deadline.toISOString());
-    }
+    formData.append('deadline', data.deadline.toISOString());
 
     startTransition(async () => {
       const result = await createTask(formData);
@@ -110,7 +110,7 @@ const NewTask = () => {
             />
             <div className="flex gap-4">
               <SelectClient />
-              <NewClient />
+              <CreateClient />
             </div>
             <Button type="submit" disabled={isPending}>
               {isPending ? 'Ajout en cours...' : 'Ajouter'}
@@ -122,4 +122,4 @@ const NewTask = () => {
   );
 };
 
-export default NewTask;
+export default CreateTask;

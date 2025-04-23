@@ -4,21 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea5879e9-efea-4c1a-95b0-8b4909140a22" name="Changes" comment="[feat] add tests">
-      <change afterPath="$PROJECT_DIR$/src/features/addTask/formSchema.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="ea5879e9-efea-4c1a-95b0-8b4909140a22" name="Changes" comment="[feat] refactor create task">
+      <change afterPath="$PROJECT_DIR$/src/features/create-client/CreateClient.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/create-task/taskSchema.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-workspace.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-workspace.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/addTask/NewTask.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addTask/NewTask.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/addTask/add-task-action/action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addTask/add-task-action/action.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/taskList/TasksList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/taskList/TasksList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/taskList/task-list-action/action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/taskList/api/getTask.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/formatDate/formatDate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/formatDate/formatDate.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/addTask/NewClient.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/addTask/NewTask.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/create-task/CreateTask.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/addTask/SelectClient.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/create-task/SelectClient.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/addTask/add-task-action/action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/create-task/action.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/addTask/create-client-action/action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/create-client/action.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/addTask/formSchema.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/create-client/clientSchema.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,55 +57,56 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JavaScript Debug.localhost:3000.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Vitest.GetQueryKey.should return the query key in an array.executor&quot;: &quot;Run&quot;,
-    &quot;Vitest.GetQueryKey.should return the query key with variable in an array.executor&quot;: &quot;Run&quot;,
-    &quot;Vitest.GetQueryKey.should return the query key with variable.executor&quot;: &quot;Run&quot;,
-    &quot;Vitest.checkFormData (1).executor&quot;: &quot;Run&quot;,
-    &quot;Vitest.checkFormData.executor&quot;: &quot;Run&quot;,
-    &quot;Vitest.formatDate.Should return a valid date.executor&quot;: &quot;Run&quot;,
-    &quot;Vitest.formatDate.executor&quot;: &quot;Run&quot;,
-    &quot;Vitest.getQueryKey.should handle undefined variables.executor&quot;: &quot;Run&quot;,
-    &quot;Vitest.getUser server action (1).executor&quot;: &quot;Run&quot;,
-    &quot;Vitest.getUser server action.executor&quot;: &quot;Run&quot;,
-    &quot;Vitest.getUser server action.should handle errors gracefully.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;features-refactor&quot;,
-    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
-    &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/cyrille/Desktop/projects/freelance-flow&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/cyrille/Desktop/projects/freelance-flow/node_modules/prettier&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/cyrille/Desktop/projects/freelance-flow/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JavaScript Debug.localhost:3000.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Vitest.GetQueryKey.should return the query key in an array.executor": "Run",
+    "Vitest.GetQueryKey.should return the query key with variable in an array.executor": "Run",
+    "Vitest.GetQueryKey.should return the query key with variable.executor": "Run",
+    "Vitest.checkFormData (1).executor": "Run",
+    "Vitest.checkFormData.executor": "Run",
+    "Vitest.formatDate.Should return a valid date.executor": "Run",
+    "Vitest.formatDate.executor": "Run",
+    "Vitest.getQueryKey.should handle undefined variables.executor": "Run",
+    "Vitest.getUser server action (1).executor": "Run",
+    "Vitest.getUser server action.executor": "Run",
+    "Vitest.getUser server action.should handle errors gracefully.executor": "Run",
+    "git-widget-placeholder": "features-refactor",
+    "js.debugger.nextJs.config.created.client": "true",
+    "js.debugger.nextJs.config.created.server": "true",
+    "last_opened_file_path": "/Users/cyrille/Desktop/projects/freelance-flow/src/features/create-client",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "pnpm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/cyrille/Desktop/projects/freelance-flow/node_modules/prettier",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "ts.external.directory.path": "/Users/cyrille/Desktop/projects/freelance-flow/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/features/create-client" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/features/create-client" />
+      <recent name="$PROJECT_DIR$/src/features/create-ask" />
       <recent name="$PROJECT_DIR$/src/lib/checkFormData" />
       <recent name="$PROJECT_DIR$/src/lib/GetQueryKeys" />
       <recent name="$PROJECT_DIR$/src/lib/getUser" />
-      <recent name="$PROJECT_DIR$/src/app/api/queries" />
-      <recent name="$PROJECT_DIR$/src/app/api/routes" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Next.js: server-side">
@@ -249,7 +247,7 @@
       <workItem from="1745345901236" duration="164000" />
       <workItem from="1745346323626" duration="498000" />
       <workItem from="1745346843957" duration="32000" />
-      <workItem from="1745346883016" duration="14461000" />
+      <workItem from="1745346883016" duration="20014000" />
     </task>
     <task id="LOCAL-00001" summary="[chore] next 15 init">
       <option name="closed" value="true" />
@@ -395,7 +393,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744992539058</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="[feat] refactor create task">
+      <option name="closed" value="true" />
+      <created>1745427259773</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1745427259773</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,6 +435,7 @@
     <MESSAGE value="[feat] switch from popover to dialog for popup" />
     <MESSAGE value="[feat] add vitest package" />
     <MESSAGE value="[feat] add tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="[feat] add tests" />
+    <MESSAGE value="[feat] refactor create task" />
+    <option name="LAST_COMMIT_MESSAGE" value="[feat] refactor create task" />
   </component>
 </project>

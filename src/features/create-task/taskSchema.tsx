@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const formSchema = z.object({
+export const taskSchema = z.object({
   title: z
     .string({
       required_error: 'Ce champ est requis',

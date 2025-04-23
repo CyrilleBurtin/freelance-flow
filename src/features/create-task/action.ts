@@ -1,18 +1,11 @@
 'use server';
 
 import getUser from '@/lib/getUser/getUser';
+import { FormState } from '@/types/types';
 import { PrismaClient } from '@prisma/client';
 import { revalidatePath } from 'next/cache';
 
 const prisma = new PrismaClient();
-
-export type FormState = {
-  message?: string;
-  fields?: Record<string, string>;
-  issues?: string[];
-  success?: boolean;
-  error?: string;
-};
 
 export const createTask = async (formData: FormData): Promise<FormState> => {
   const user = await getUser();
