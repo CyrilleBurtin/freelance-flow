@@ -6,10 +6,21 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { getTasks } from '@/features/taskList/task-list-action/action';
+import { getTasks } from '@/features/taskList/api/getTask';
 import { formatDeadline } from '@/lib/formatDate/formatDate';
+import getUser from '@/lib/getUser/getUser';
 
 async function TasksList() {
+  const user = await getUser();
+
+  if (!user) {
+    return (
+      <div className="py-4 text-center text-amber-600">
+        Vous n'êtes pas connecté
+      </div>
+    );
+  }
+
   const { tasks, error } = await getTasks();
 
   if (error) {
@@ -29,7 +40,7 @@ async function TasksList() {
             <CardDescription>{task.clientId}</CardDescription>
           </CardHeader>
           <CardContent>
-            <p>deadline : {formatDeadline(new Date(task.deadline))}</p>
+            <p>deadline : {formatDeadline(task.deadline)}</p>
           </CardContent>
           <CardFooter>
             <p>{task.status}</p>

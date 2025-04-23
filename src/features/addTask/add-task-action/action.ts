@@ -6,36 +6,36 @@ import { revalidatePath } from 'next/cache';
 
 const prisma = new PrismaClient();
 
-export const createTask = async (formData: FormData) => {
+export type FormState = {
+  message?: string;
+  fields?: Record<string, string>;
+  issues?: string[];
+  success?: boolean;
+  error?: string;
+};
+
+export const createTask = async (formData: FormData): Promise<FormState> => {
   const user = await getUser();
 
   if (!user) {
-    return;
-  }
-  const rawFormData = {
-    title: formData.get('title') as string,
-    deadline: formData.get('deadline') as string,
-    clientId: formData.get('clientId') as string | null,
-  };
-  console.log({ rawFormData });
-
-  const hasEmptyValues = Object.entries(rawFormData).some(
-    ([key, value]) => key !== 'clientId' && (value === null || value === ''),
-  );
-
-  if (hasEmptyValues) {
     return {
-      success: false,
-      error: 'Le titre et la date limite sont obligatoires',
+      message: 'User not authenticated',
+      error: 'Utilisateur non authentifié',
     };
   }
+
+  const title = formData.get('title') as string;
+  const deadline = formData.get('deadline') as string;
+  const clientId = formData.get('clientId') as string | null;
+
+  console.log(clientId);
 
   try {
     await prisma.task.create({
       data: {
-        title: rawFormData.title,
-        deadline: new Date(rawFormData.deadline),
-        clientId: rawFormData.clientId || null,
+        title,
+        deadline,
+        clientId: clientId || null,
         userId: user?.id,
         status: 'pending',
         order: 0,
@@ -44,10 +44,13 @@ export const createTask = async (formData: FormData) => {
 
     revalidatePath('/');
 
-    return { success: true };
+    return { success: true, message: 'Task created' };
   } catch (error) {
     console.error(error);
-    return { success: false, error: 'Erreur lors de la création de la tâche' };
+    return {
+      success: false,
+      error: 'Erreur lors de la création de la tâche',
+    };
   } finally {
     await prisma.$disconnect();
   }

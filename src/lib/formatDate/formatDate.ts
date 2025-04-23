@@ -1,5 +1,5 @@
 export const formatDeadline = (date: Date) => {
-  return date.toLocaleDateString('fr-FR', {
+  return new Date(date).toLocaleDateString('fr-FR', {
     day: 'numeric',
     month: 'long',
     year: 'numeric',

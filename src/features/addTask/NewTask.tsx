@@ -1,83 +1,124 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
+import { Calendar } from '@/components/ui/calendar';
 import {
   Dialog,
   DialogContent,
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 import NewClient from '@/features/addTask/NewClient';
 import SelectClient from '@/features/addTask/SelectClient';
 import { createTask } from '@/features/addTask/add-task-action/action';
+import { formSchema } from '@/features/addTask/formSchema';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from 'next/navigation';
 import { useState, useTransition } from 'react';
+import { useForm } from 'react-hook-form';
+import { toast } from 'sonner';
+import { z } from 'zod';
+
+type FormSchema = z.output<typeof formSchema>;
 
 const NewTask = () => {
   const router = useRouter();
-  const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleFormAction = async (formData: FormData) => {
-    const result = await createTask(formData);
+  const form = useForm<FormSchema>({
+    resolver: zodResolver(formSchema),
+  });
 
-    if (result?.success) {
-      startTransition(() => {
-        router.refresh();
-        setIsOpen(false);
-      });
-    } else if (result?.error) {
-      setError(result.error);
+  async function onSubmit(data: z.infer<typeof formSchema>) {
+    const formData = new FormData();
+    formData.append('title', data.title);
+
+    if (data.deadline) {
+      formData.append('deadline', data.deadline.toISOString());
     }
-  };
+
+    startTransition(async () => {
+      const result = await createTask(formData);
+
+      if (result.success) {
+        toast.success('Tâche créée avec succès');
+        form.reset();
+        setIsOpen(false);
+        router.refresh();
+      } else if (result.error) {
+        toast.error(result.error);
+      }
+    });
+  }
 
   return (
-    <>
-      <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogTrigger asChild>
-          <Button className="fixed right-20 bottom-20 cursor-pointer bg-green-500">
-            +
-          </Button>
-        </DialogTrigger>
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      <DialogTrigger asChild>
+        <Button className="fixed right-20 bottom-20 cursor-pointer bg-green-500">
+          +
+        </Button>
+      </DialogTrigger>
 
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform"></div>
-        <DialogContent>
-          <DialogTitle>Création d'une nouvelle tâche</DialogTitle>
-          <form action={handleFormAction}>
-            {error && (
-              <div className="mb-4 rounded bg-red-100 p-2 text-red-700">
-                {error}
-              </div>
-            )}
-            <div className="w-full space-y-6">
-              <div className="space-y-2">
-                <Label htmlFor="title">Titre</Label>
-                <Input id="title" name="title" type="text" required />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="deadline">Échéance</Label>
-                <Input
-                  id="deadline"
-                  name="deadline"
-                  type="datetime-local"
-                  required
-                />
-              </div>
-              <div className="flex gap-4">
-                <SelectClient />
-                <NewClient />
-              </div>
-              <Button type="submit" disabled={isPending}>
-                {isPending ? 'Ajout en cours...' : 'Ajouter'}
-              </Button>
+      <DialogContent>
+        <DialogTitle>Création d&apos;une nouvelle tâche</DialogTitle>
+
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+            <FormField
+              control={form.control}
+              name="title"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Titre</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Titre de la tâche" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="deadline"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Date limite</FormLabel>
+                  <FormControl>
+                    <Calendar
+                      mode="single"
+                      selected={field.value}
+                      onSelect={field.onChange}
+                      disabled={(date: Date) =>
+                        date < new Date() || date < new Date('1900-01-01')
+                      }
+                      initialFocus
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <div className="flex gap-4">
+              <SelectClient />
+              <NewClient />
             </div>
+            <Button type="submit" disabled={isPending}>
+              {isPending ? 'Ajout en cours...' : 'Ajouter'}
+            </Button>
           </form>
-        </DialogContent>
-      </Dialog>
-    </>
+        </Form>
+      </DialogContent>
+    </Dialog>
   );
 };
 
