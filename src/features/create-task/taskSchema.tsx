@@ -12,4 +12,5 @@ export const taskSchema = z.object({
     required_error: 'Ce champ est requis',
     invalid_type_error: 'Date invalide',
   }),
+  clientId: z.string().optional(),
 });

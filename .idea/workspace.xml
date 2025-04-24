@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea5879e9-efea-4c1a-95b0-8b4909140a22" name="Changes" comment="[feat] refactor create task">
-      <change afterPath="$PROJECT_DIR$/src/features/create-client/CreateClient.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/create-task/taskSchema.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types/types.ts" afterDir="false" />
+    <list default="true" id="ea5879e9-efea-4c1a-95b0-8b4909140a22" name="Changes" comment="[feat] refactor and rename CreateClient.tsx">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/addTask/NewClient.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/addTask/NewTask.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/create-task/CreateTask.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/addTask/SelectClient.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/create-task/SelectClient.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/addTask/add-task-action/action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/create-task/action.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/addTask/create-client-action/action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/create-client/action.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/addTask/formSchema.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/create-client/clientSchema.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/create-client/CreateClient.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/create-client/CreateClient.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/create-task/CreateTask.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/create-task/CreateTask.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/create-task/SelectClient.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/create-task/SelectClient.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/create-task/taskSchema.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/create-task/taskSchema.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,7 +241,7 @@
       <workItem from="1745345901236" duration="164000" />
       <workItem from="1745346323626" duration="498000" />
       <workItem from="1745346843957" duration="32000" />
-      <workItem from="1745346883016" duration="20014000" />
+      <workItem from="1745346883016" duration="23011000" />
     </task>
     <task id="LOCAL-00001" summary="[chore] next 15 init">
       <option name="closed" value="true" />
@@ -401,7 +395,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745427259773</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="[feat] refactor and rename CreateClient.tsx">
+      <option name="closed" value="true" />
+      <created>1745434839726</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1745434839727</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -436,6 +438,7 @@
     <MESSAGE value="[feat] add vitest package" />
     <MESSAGE value="[feat] add tests" />
     <MESSAGE value="[feat] refactor create task" />
-    <option name="LAST_COMMIT_MESSAGE" value="[feat] refactor create task" />
+    <MESSAGE value="[feat] refactor and rename CreateClient.tsx" />
+    <option name="LAST_COMMIT_MESSAGE" value="[feat] refactor and rename CreateClient.tsx" />
   </component>
 </project>

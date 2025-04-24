@@ -16,7 +16,13 @@ interface Client {
   name: string;
 }
 
-const SelectClient = () => {
+interface SelectClientProps {
+  value?: string;
+  onChange?: (value: string) => void;
+  disabled?: boolean;
+}
+
+const SelectClient = ({ value, onChange, disabled }: SelectClientProps) => {
   const { data: sessionData } = useSession();
   const userId = sessionData?.session.id;
 
@@ -38,8 +44,12 @@ const SelectClient = () => {
   const placeholderText = isClientListEmpty ? 'auncun client' : 'clients';
 
   return (
-    <Select>
-      <SelectTrigger disabled={isClientListEmpty} className="w-full">
+    <Select
+      value={value}
+      onValueChange={onChange}
+      disabled={disabled || isClientListEmpty}
+    >
+      <SelectTrigger className="w-full">
         <SelectValue placeholder={placeholderText} />
       </SelectTrigger>
       <SelectContent>

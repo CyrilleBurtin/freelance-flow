@@ -28,7 +28,7 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import { z } from 'zod';
 
-type TaskSchema = z.output<typeof taskSchema>;
+type TaskSchema = z.infer<typeof taskSchema>;
 
 const CreateTask = () => {
   const router = useRouter();
@@ -39,6 +39,8 @@ const CreateTask = () => {
     resolver: zodResolver(taskSchema),
     defaultValues: {
       title: '',
+      deadline: undefined,
+      clientId: '',
     },
   });
 
@@ -46,6 +48,9 @@ const CreateTask = () => {
     const formData = new FormData();
     formData.append('title', data.title);
     formData.append('deadline', data.deadline.toISOString());
+    if (data.clientId) {
+      formData.append('clientId', data.clientId); // Append clientId if it exists
+    }
 
     startTransition(async () => {
       const result = await createTask(formData);
@@ -109,7 +114,23 @@ const CreateTask = () => {
               )}
             />
             <div className="flex gap-4">
-              <SelectClient />
+              <FormField
+                control={form.control}
+                name="clientId"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Client</FormLabel>
+                    <FormControl>
+                      <SelectClient
+                        value={field.value}
+                        onChange={field.onChange}
+                        disabled={field.disabled}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
               <CreateClient />
             </div>
             <Button type="submit" disabled={isPending}>

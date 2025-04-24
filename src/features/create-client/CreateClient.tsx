@@ -31,6 +31,7 @@ const CreateClient = () => {
   const [isPending, startTransition] = useTransition();
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
+  const formRef = React.useRef<HTMLFormElement>(null);
 
   const form = useForm<ClientSchema>({
     resolver: zodResolver(clientSchema),
@@ -73,15 +74,22 @@ const CreateClient = () => {
       <DialogContent>
         <DialogTitle>Ajout d'un nouveau client</DialogTitle>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+          <form
+            ref={formRef}
+            onSubmit={(e) => {
+              e.stopPropagation(); // Still needed to prevent parent form submission
+              form.handleSubmit(onSubmit)(e);
+            }}
+            className="space-y-4"
+          >
             <FormField
               control={form.control}
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Titre</FormLabel>
+                  <FormLabel>Nom</FormLabel>
                   <FormControl>
-                    <Input placeholder="name" {...field} />
+                    <Input placeholder="Nom" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -92,9 +100,9 @@ const CreateClient = () => {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Titre</FormLabel>
+                  <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input placeholder="email" {...field} />
+                    <Input placeholder="Email" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
