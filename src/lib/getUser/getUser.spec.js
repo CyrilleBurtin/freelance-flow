@@ -1,5 +1,5 @@
 import { auth } from '@/auth/auth';
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '@/generated/prisma/client';
 import { headers } from 'next/headers';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 

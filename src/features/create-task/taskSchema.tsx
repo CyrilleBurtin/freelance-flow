@@ -1,16 +1,9 @@
+import { TASK_COLOR } from '@/features/color-picker/ColorPicker';
 import { z } from 'zod';
 
 export const taskSchema = z.object({
-  title: z
-    .string({
-      required_error: 'Ce champ est requis',
-      invalid_type_error: 'Doit être une chaîne de caractères',
-    })
-    .min(2, { message: 'Le titre doit contenir au moins 2 caractères.' })
-    .max(50, { message: 'Le titre doit contenir moins de 50 caractères.' }),
-  deadline: z.coerce.date({
-    required_error: 'Ce champ est requis',
-    invalid_type_error: 'Date invalide',
-  }),
+  title: z.string().min(1, 'Le titre est requis'),
+  deadline: z.date({ required_error: 'La date limite est requise' }),
   clientId: z.string().optional(),
+  taskColor: z.enum(TASK_COLOR).optional(), // Strict validation
 });

@@ -1,5 +1,5 @@
-import getUser from '@/lib/getUser/getUser';
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '@/generated/prisma/client';
+import { getUser } from '@/lib/getUser/getUser';
 import { NextResponse } from 'next/server';
 
 export async function GET() {

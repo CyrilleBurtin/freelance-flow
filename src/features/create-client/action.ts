@@ -1,7 +1,7 @@
 'use server';
 
-import getUser from '@/lib/getUser/getUser';
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '@/generated/prisma/client';
+import { getUser } from '@/lib/getUser/getUser';
 import { revalidatePath } from 'next/cache';
 
 const prisma = new PrismaClient();

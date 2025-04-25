@@ -1,8 +1,8 @@
 'use server';
 
-import getUser from '@/lib/getUser/getUser';
+import { PrismaClient } from '@/generated/prisma/client';
+import { getUser } from '@/lib/getUser/getUser';
 import { FormState } from '@/types/types';
-import { PrismaClient } from '@prisma/client';
 import { revalidatePath } from 'next/cache';
 
 const prisma = new PrismaClient();
@@ -20,18 +20,18 @@ export const createTask = async (formData: FormData): Promise<FormState> => {
   const title = formData.get('title') as string;
   const deadline = formData.get('deadline') as string;
   const clientId = formData.get('clientId') as string | null;
-
-  console.log(clientId);
+  const taskColor = formData.get('taskColor') as string | null;
 
   try {
     await prisma.task.create({
       data: {
         title,
         deadline,
-        clientId: clientId || null,
+        clientId: clientId,
         userId: user?.id,
         status: 'pending',
         order: 0,
+        taskColor,
       },
     });
 

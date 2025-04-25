@@ -17,6 +17,7 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
+import ColorPicker from '@/features/color-picker/ColorPicker';
 import CreateClient from '@/features/create-client/CreateClient';
 import SelectClient from '@/features/create-task/SelectClient';
 import { createTask } from '@/features/create-task/action';
@@ -41,6 +42,7 @@ const CreateTask = () => {
       title: '',
       deadline: undefined,
       clientId: '',
+      taskColor: undefined,
     },
   });
 
@@ -48,8 +50,13 @@ const CreateTask = () => {
     const formData = new FormData();
     formData.append('title', data.title);
     formData.append('deadline', data.deadline.toISOString());
+
     if (data.clientId) {
       formData.append('clientId', data.clientId); // Append clientId if it exists
+    }
+
+    if (data.taskColor) {
+      formData.append('taskColor', data.taskColor); // Append selected color
     }
 
     startTransition(async () => {
@@ -113,6 +120,17 @@ const CreateTask = () => {
                 </FormItem>
               )}
             />
+            <FormField
+              control={form.control}
+              name="taskColor"
+              render={({ field }) => (
+                <ColorPicker
+                  value={field.value}
+                  onChange={field.onChange}
+                  disabled={field.disabled}
+                />
+              )}
+            />
             <div className="flex gap-4">
               <FormField
                 control={form.control}
@@ -133,6 +151,7 @@ const CreateTask = () => {
               />
               <CreateClient />
             </div>
+
             <Button type="submit" disabled={isPending}>
               {isPending ? 'Ajout en cours...' : 'Ajouter'}
             </Button>

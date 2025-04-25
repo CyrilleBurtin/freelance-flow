@@ -1,12 +1,12 @@
 'use server';
 
 import { auth } from '@/auth/auth';
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '@/generated/prisma/client';
 import { headers } from 'next/headers';
 
 const prisma = new PrismaClient();
 
-const getUser = async () => {
+export const getUser = async () => {
   try {
     const session = await auth.api.getSession({
       headers: await headers(),
@@ -30,5 +30,3 @@ const getUser = async () => {
     return undefined;
   }
 };
-
-export default getUser;

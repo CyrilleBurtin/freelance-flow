@@ -23,6 +23,7 @@ const eslintConfig = [
       'react-compiler/react-compiler': 'error',
       '@tanstack/query/exhaustive-deps': 'error',
     },
+    exclude: ['src/generated'],
   },
 ];
 

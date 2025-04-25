@@ -1,6 +1,7 @@
 generator client {
-  provider = "prisma-client-js"
-  output   = "app/generated/primsa/client"
+  provider     = "prisma-client-js"
+  output       = "../src/generated/prisma/client"
+  moduleFormat = "esm"
 }
 
 datasource db {
@@ -85,14 +86,14 @@ model Client {
 
 model Task {
   id        String   @id @default(uuid()) // Identifiant unique pour la tâche
-  title     String // Nom de la tâche (ex. : "Rédaction article blog")
-  deadline  DateTime // Date limite de la tâche
-  clientId  String? // Lier la tâche à un client (optionnel)
-  client    Client?  @relation(fields: [clientId], references: [id], onDelete: SetNull) // Relation avec Client
-  userId    String // Lier la tâche à un utilisateur
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade) // Relation avec User
-  status    String   @default("pending") // Statut de la tâche (ex. : "pending", "in_progress", "completed")
-  order     Int      @default(0) // Champ pour gérer la priorité (drag-and-drop)
+  title     String
+  deadline  DateTime
+  clientId  String?
+  client    Client?  @relation(fields: [clientId], references: [id], onDelete: SetNull)
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  status    String   @default("pending")
+  order     Int      @default(0)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 

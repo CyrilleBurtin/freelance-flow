@@ -6,9 +6,9 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { getTasks } from '@/features/taskList/api/getTask';
+import { getTasks } from '@/features/taskList/api/getUserTaskList';
 import { formatDeadline } from '@/lib/formatDate/formatDate';
-import getUser from '@/lib/getUser/getUser';
+import { getUser } from '@/lib/getUser/getUser';
 
 async function TasksList() {
   const user = await getUser();
