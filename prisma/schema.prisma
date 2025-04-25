@@ -95,6 +95,7 @@ model Task {
   status    String   @default("pending")
   order     Int      @default(0)
   createdAt DateTime @default(now())
+  taskColor String?
   updatedAt DateTime @updatedAt
 
   @@map("task")
