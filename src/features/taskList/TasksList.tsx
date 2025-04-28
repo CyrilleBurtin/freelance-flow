@@ -34,7 +34,7 @@ async function TasksList() {
   return (
     <div className="space-y-4">
       {tasks.map((task) => (
-        <Card key={task.id} className="mb-4">
+        <Card key={task.id} className={`mb-4 ${task.taskColor}`}>
           <CardHeader>
             <CardTitle>{task.title}</CardTitle>
             <CardDescription>{task.clientId}</CardDescription>

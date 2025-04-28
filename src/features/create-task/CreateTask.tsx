@@ -132,24 +132,27 @@ const CreateTask = () => {
               )}
             />
             <div className="flex gap-4">
-              <FormField
-                control={form.control}
-                name="clientId"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Client</FormLabel>
-                    <FormControl>
-                      <SelectClient
-                        value={field.value}
-                        onChange={field.onChange}
-                        disabled={field.disabled}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <CreateClient />
+              <div className="flex-3">
+                <FormField
+                  control={form.control}
+                  name="clientId"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <SelectClient
+                          value={field.value}
+                          onChange={field.onChange}
+                          disabled={field.disabled}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+              <div className="flex-1">
+                <CreateClient />
+              </div>
             </div>
 
             <Button type="submit" disabled={isPending}>
